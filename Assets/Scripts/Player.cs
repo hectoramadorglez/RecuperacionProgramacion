@@ -30,6 +30,11 @@ public class Player : MonoBehaviour
             anim.SetBool("correr", true);
         
         }
+        else 
+        {
+            anim.SetBool("correr", false);
+
+        }
         
         if (Input.GetKeyDown(KeyCode.Escape) && Ensuelo() == true) 
         {
