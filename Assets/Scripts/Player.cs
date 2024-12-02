@@ -7,10 +7,12 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]private Transform pies;
     [SerializeField]private float radio;
+    [SerializeField] public float vida;
     [SerializeField]private LayerMask layerMask;
     [SerializeField] private int fuerzaMovimiento;
     [SerializeField] private int fuerzaSalto;
     [SerializeField] private Rigidbody2D rb;
+
     private int hInput;
     private Animator anim;
     void Start()
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
         {
            rb.AddForce(new Vector2(0, 1) * fuerzaSalto, ForceMode2D.Impulse);
         }
+        
     }
     private void FixedUpdate()
     {
@@ -65,5 +68,11 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(pies.transform.position, radio);    
+    }
+    void RecibirDanho(float danho) 
+    {
+        vida -= danho;
+       
+
     }
 }
